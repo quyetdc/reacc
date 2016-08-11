@@ -45,3 +45,6 @@ group :development do
   gem 'spring'
 end
 
+gem "twitter-bootstrap-rails"
+gem "font-awesome-rails"
+gem 'react-rails'
