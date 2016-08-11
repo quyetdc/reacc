@@ -8,7 +8,7 @@
           className: 'panel-heading'
           React.DOM.h3
             className: 'panel-title'
-            @props.title
+            @props.name
         React.DOM.div
           className: 'panel-body'
           "#{amountFormat @props.amount}"
