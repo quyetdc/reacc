@@ -8,3 +8,15 @@
 
 Record.create title: 'Record 1', date: Date.today, amount: 500
 Record.create title: 'Record 2', date: Date.today, amount: -100
+
+#  title      :string
+#  date       :date
+#  amount     :float
+
+50.times do
+  Record.create title: Faker::Name.title, date: Faker::Date.between(100.days.ago, Date.today), amount: rand(-500..0)
+end
+
+50.times do
+  Record.create title: Faker::Name.title, date: Faker::Date.between(100.days.ago, Date.today), amount: rand(0..500)
+end

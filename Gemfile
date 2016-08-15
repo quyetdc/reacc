@@ -50,3 +50,5 @@ gem "font-awesome-rails"
 gem 'react-rails'
 
 gem 'annotate'
+
+gem 'faker'
