@@ -16,6 +16,13 @@
     records.splice(index, 1)
     @replaceState records: records  
 
+  editRecord: (record, data) ->
+    records = @state.records.slice() # copy
+    index = records.indexOf(record)
+    if index
+      records[index] = data
+      @replaceState records: records
+
   credits: ->
     credits = @state.records.filter (val) -> val.amount >= 0
     credits.reduce ((prev, curr) ->
@@ -56,7 +63,7 @@
             React.DOM.td null, "Actions"
         React.DOM.tbody null,
           for record in @state.records
-            React.createElement Record, key: record.id, record: record, handleDeleteRecord: @deleteRecord
+            React.createElement Record, key: record.id, record: record, handleDeleteRecord: @deleteRecord, handleEditRecord: @editRecord
       
       
       
