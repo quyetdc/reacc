@@ -1,6 +1,9 @@
 class RecordsController < ApplicationController
   def index
     @records = Record.all
+    if params[:search]
+      render json: Record.where('title LIKE ?', "%#{params[:search]}%").all
+    end
   end
 
   def create

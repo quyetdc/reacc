@@ -38,12 +38,22 @@
   balance: ->
     @debits() + @credits()
 
+  handleSearch: (data) ->
+    @replaceState records: data
+
   render: ->
     React.DOM.div
       className: 'records'
-      React.DOM.h2
-        className: 'title'
-        'Records'
+      React.DOM.div
+        className: 'row'
+        React.DOM.div
+          className: 'col-md-3'
+          React.DOM.h2
+            className: 'title'
+            'Records'
+        React.DOM.div
+          className: 'col-md-9'
+          React.createElement RecordSearch, handleSearch: @handleSearch
 
       React.DOM.div
         className: 'row'
