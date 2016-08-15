@@ -48,3 +48,5 @@ end
 gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
 gem 'react-rails'
+
+gem 'annotate'
